@@ -57,20 +57,20 @@ class StructureLibrary():
             self.struct_lib[ident] = (struct, ori)
 
     def get_library_size(cls, to_print = False):
-            """
-            Returns the number of structures in the current StructureLibrary
-            object. Will also print the number of entries for each structure in
-            the library if the parameter to_print is set to True.
+        """
+        Returns the number of structures in the current StructureLibrary
+        object. Will also print the number of entries for each structure in
+        the library if the parameter to_print is set to True.
 
-            Parameters
-            ----------
-            to_print : bool
-                Default is 'False'
-            Returns
-            -------
-            size_library : int
-                Total number of entries in the current StructureLibrary object.
-            """
+        Parameters
+        ----------
+        to_print : bool
+            Default is 'False'
+        Returns
+        -------
+        size_library : int
+            Total number of entries in the current StructureLibrary object.
+        """
         size_library = 0
         for i in range (len(cls.orientations)):
             size_library += len(cls.orientations[i])
