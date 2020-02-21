@@ -76,7 +76,9 @@ class StructureLibrary():
             size_library += len(cls.orientations[i])
             if to_print == True:
                     print(cls.identifiers[i], "has", \
-                    len(cls.orientations[i]), "number of entries")
+                    len(cls.orientations[i]), "number of entries.")
+        if to_print == True:
+            print("\n There are in total", size_library, "number of entries in", cls)
         return size_library
 
     @classmethod
