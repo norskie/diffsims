@@ -103,3 +103,10 @@ class StructureLibrary():
         for system in systems:
             orientations.append(get_grid_stereographic(system, resolution, equal))
         return cls(identifiers, structures, orientations)
+
+    @classmethod
+    def print_number_of_structures(self):
+        size_library = 0
+        for i in range (len(self.orientations)):
+            size_library += len(self.orientations[i])
+            print(self.identifiers[i], "has", len(self.orientations[i]), "number of entries")
