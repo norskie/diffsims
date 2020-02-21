@@ -107,6 +107,6 @@ class StructureLibrary():
     @classmethod
     def print_number_of_structures(self):
         size_library = 0
-        for i in range (len(self.orientations)):
-            size_library += len(self.orientations[i])
-            print(self.identifiers[i], "has", len(self.orientations[i]), "number of entries")
+        for i in range (len(orientations)):
+            size_library += len(orientations[i])
+            print(identifiers[i], "has", len(orientations[i]), "number of entries")
