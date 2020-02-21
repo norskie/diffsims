@@ -74,7 +74,7 @@ class StructureLibrary():
         """
         size_library = 0
         for i in range (len(cls.orientations)):
-            if(type(cls.orientations[i]) != list:
+            if type(cls.orientations[i]) != list:
                 size_library += 1
             else:
                 size_library += len(cls.orientations[i])
