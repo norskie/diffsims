@@ -56,6 +56,29 @@ class StructureLibrary():
         for ident, struct, ori in zip(identifiers, structures, orientations):
             self.struct_lib[ident] = (struct, ori)
 
+    def get_library_size(cls, to_print = False):
+            """
+            Returns the number of structures in the current StructureLibrary
+            object. Will also print the number of entries for each structure in
+            the library if the parameter to_print is set to True.
+
+            Parameters
+            ----------
+            to_print : bool
+                Default is 'False'
+            Returns
+            -------
+            size_library : int
+                Total number of entries in the current StructureLibrary object.
+            """
+        size_library = 0
+        for i in range (len(cls.orientations)):
+            size_library += len(cls.orientations[i])
+            if to_print == True:
+                    print(cls.identifiers[i], "has", \
+                    len(cls.orientations[i]), "number of entries")
+        return size_library
+
     @classmethod
     def from_orientation_lists(cls, identifiers, structures, orientations):
         """
@@ -103,10 +126,3 @@ class StructureLibrary():
         for system in systems:
             orientations.append(get_grid_stereographic(system, resolution, equal))
         return cls(identifiers, structures, orientations)
-
-    @classmethod
-    def print_number_of_structures(self):
-        size_library = 0
-        for i in range (len(orientations)):
-            size_library += len(orientations[i])
-            print(identifiers[i], "has", len(orientations[i]), "number of entries")
