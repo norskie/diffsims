@@ -73,7 +73,11 @@ class StructureLibrary():
         """
         size_library = 0
         for i in range (len(cls.orientations)):
-            size_library += len(cls.orientations[i])
+            if(type(cls.orientation[i]) == float or \
+            type(cls.orientation) == int):
+                size_library += 1
+            else:
+                size_library += len(cls.orientations[i])
             if to_print == True:
                     print(cls.identifiers[i], "has", \
                     len(cls.orientations[i]), "number of entries.")
