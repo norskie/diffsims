@@ -60,7 +60,8 @@ class StructureLibrary():
         """
         Returns the number of structures in the current StructureLibrary
         object. Will also print the number of entries for each structure in
-        the library if the parameter to_print is set to True.
+        the library if the parameter to_print is set to True. Works with both
+        cls.orientations on the form [1,2] and [[1,2], [2,3]](rotation lists).
 
         Parameters
         ----------
@@ -73,12 +74,11 @@ class StructureLibrary():
         """
         size_library = 0
         for i in range (len(cls.orientations)):
-            if(type(cls.orientations[i]) == float or \
-            type(cls.orientations[i]) == int):
+            if(type(cls.orientations[i]) != list:
                 size_library += 1
             else:
                 size_library += len(cls.orientations[i])
-            if to_print == True:
+            if to_print == True and type(cls.orientations[i]) == list:
                     print(cls.identifiers[i], "has", \
                     len(cls.orientations[i]), "number of entries.")
         if to_print == True:
