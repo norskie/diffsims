@@ -74,7 +74,7 @@ class StructureLibrary():
         size_library = 0
         for i in range (len(cls.orientations)):
             if(type(cls.orientations[i]) == float or \
-            type(cls.orientations[i]}) == int):
+            type(cls.orientations[i]) == int):
                 size_library += 1
             else:
                 size_library += len(cls.orientations[i])
